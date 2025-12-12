@@ -34,7 +34,7 @@ const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
 ╭──────────────────✰
-┊✰───*𝐃𝚰𝐋 𝐊𝚫𝚴𝚯 𝚻𝚳𝐃*────✰
+┊✰───*𝚻𝚰𝚳𝚴𝚫𝐒𝚫 𝚻𝚳𝐃2*────✰
 ┊✍︎┊ *𝙐𝙎𝙀𝙍* : ${s.OWNER_NAME}
 ┊✍︎┊ *𝙈𝙊𝘿𝙀* : ${mode}
 ┊✰───────────────✰
@@ -44,7 +44,7 @@ const date = moment().format('DD/MM/YYYY');
 ╰──────────────────✰ \n\n`;
  
     let menuMsg=`  
-  *𝐃𝚰𝐋 𝐊𝚫𝚴𝚯 𝚻𝚳𝐃 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎*
+  *ᴛɪᴍɴᴀsᴀ ᴛᴍᴅ2 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎*
 `;
 
     for (const cat in coms) {
@@ -54,14 +54,14 @@ const date = moment().format('DD/MM/YYYY');
 *┊✞︎* ${cmd}`;
         }
         menuMsg += `
-*╰═════════════✰* \n`
+*╰══════ᴛɪᴍɴᴀsᴀ ᴛᴍᴅ2═══════✰* \n`
     }
 
     menuMsg += `
          ◇           ◇
-*—————🦠🦠🦠—————*
+*————ᴛɪᴍɴᴀsᴀ ᴛᴍᴅ2—————*
 
-  *𝐃𝚰𝐋 𝐊𝚫𝚴𝚯 𝚻𝚳𝐃*                                         
+  *𝚻𝚰𝚳𝚴𝚫𝐒𝚫 𝚻𝚳𝐃2*                                         
 *╰═════════════✰*
 `;
 
@@ -69,7 +69,7 @@ const date = moment().format('DD/MM/YYYY');
 
    if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Zokou-MD*, développé par Djalega++" , gifPlayback : true }, { quoted: ms });
+        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *ᴛɪᴍɴᴀsᴀ ᴛᴍᴅ2*, développé par timnasa++" , gifPlayback : true }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
