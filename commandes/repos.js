@@ -1,10 +1,10 @@
-﻿"use strict";
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { zokou } = require("../framework/zokou");
 
 zokou({ nomCom: "repo", catégorie:"General", reaction: "👊", nomFichier: __filename }, async (dest, zk, commandeOptions) => {
-  const githubRepo = 'https://api.github.com/repos/next5x/TIMNASA_TMD';
-  const img = 'https://files.catbox.moe/f4ft7z.jpg';
+  const githubRepo = 'https://api.github.com/repos/timnasax/TIMNASA_TMD2';
+  const img = 'https://files.catbox.moe/qf6u89.jpg';
 
   try {
     const response = await fetch(githubRepo);
@@ -22,7 +22,7 @@ zokou({ nomCom: "repo", catégorie:"General", reaction: "👊", nomFichier: __fi
       const lastUpdateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
 
       const gitdata = `*ʜᴇʟʟᴏᴡ ᴡʜᴀᴛsᴀᴀᴘ ᴜsᴇʀ
-ᴛʜɪs ɪs* *𝐃𝚰𝐋 𝐊𝚫𝚴𝚯 𝚻𝚳𝐃 .*\n sᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ *ʙʏ*,  https://whatsapp.com/channel/0029VajweHxKQuJP6qnjLM31
+ᴛʜɪs ɪs *ᴛɪᴍɴᴀsᴀ ᴛᴍᴅ2.* \n sᴜᴘᴘᴏʀᴛ ᴏᴜʀ ᴄʜᴀɴɴᴇʟ *ʙʏ*,  Follow the FREE INTERNET           ○ channel on WhatsApp: https://whatsapp.com/channel/0029Vb9kKuVCMY0F5rmX2j1u
 
 ╔═━━━━════──────➳
 ║╔═━━━━━━════─━━─➳
@@ -42,5 +42,6 @@ zokou({ nomCom: "repo", catégorie:"General", reaction: "👊", nomFichier: __fi
     }
   } catch (error) {
     console.log("Error fetching data:", error);
+     }
+   }
   }
-});
