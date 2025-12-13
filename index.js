@@ -470,7 +470,7 @@ function mybotpic() {
                                    // txt += `message supprimé \n @${auteurMessage.split("@")[0]} rétiré du groupe.`;
                                     const gifLink = "https://raw.githubusercontent.com/timnasax/TIMNASA_TMD2/main/media/remover.gif";
                                     var sticker = new Sticker(gifLink, {
-                                        pack: 'TIMNASA_TMD,
+                                        pack: 'zokou,
                                         author: conf.OWNER_NAME,
                                         type: StickerTypes.FULL,
                                         categories: ['🤩', '🎉'],
@@ -862,7 +862,7 @@ zk.ev.on('group-participants.update', async (group) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
                             require(__dirname + "/commandes/" + fichier);
-                            console.log(fichier + " Installed Successfully✔️");
+                            console.log(fichier + " Installed Successfully💯");
                         }
                         catch (e) {
                             console.log(`${fichier} could not be installed due to : ${e}`);
@@ -888,7 +888,7 @@ zk.ev.on('group-participants.update', async (group) => {
                 
                 if((conf.DP).toLowerCase() === 'yes') {     
 
-                let cmsg =`      *TIMNASA TMD2*
+                let cmsg =`      TIMNASA TMD2
 ╭─────────────━┈⊷ 
 │🌏 TIMNASA TMD2 NOW IS *ACTIVE*
 │💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
