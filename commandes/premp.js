@@ -2,7 +2,7 @@ const { zokou } = require("../framework/zokou");
 const fs = require('fs-extra');
 
 // Approve User
-zokou({ nomCom: "approve", categorie: "Sudo", reaction: "✅" }, async (dest, zk, repondeur) => {
+zokou({ nomCom: "approvex", categorie: "Sudo", reaction: "✅" }, async (dest, zk, repondeur) => {
     const { ms, msgRepondu, auteurMsgRepondu, superUser, arg } = repondeur;
     
     if (!superUser) return repondeur.repondre("Amri hii ni kwa Owner tu.");
