@@ -118,7 +118,7 @@ setTimeout(() => {
 
 
      // List of image URLs
-    const njabulox = [
+    const catbox = [
         "https://files.catbox.moe/iii5jv.jpg",
         "https://files.catbox.moe/xjeyjh.jpg",
         "https://files.catbox.moe/mh36c7.jpg",
@@ -127,7 +127,7 @@ setTimeout(() => {
     ];
 
     // Select a random image file
-    const randomNjabulourl = njabulox[Math.floor(Math.random() * njabulox.length)];
+    const randomcutboxurl = catbox[Math.floor(Math.random() * catbox.length)];
 
         const buttons = [{
     name: "cta_url",
