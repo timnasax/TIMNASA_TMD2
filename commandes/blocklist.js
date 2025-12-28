@@ -1,6 +1,6 @@
-const { timoth } = require("../timnasa/timoth");
+const { zokou } = require("../framework/zokou");
 
-timoth({
+zokou({
   nomCom: "blocklist",
   aliases: ["listblock", "blacklist"],
   reaction: '☘️',
@@ -25,7 +25,7 @@ timoth({
         const phoneNumber = blockedUser.split('@')[0];
 
         // Add the blocked user's phone number to the message
-        jackhuh += `🙄+${phoneNumber}\n`;  // List the phone number
+        jackhuh += `📵+${phoneNumber}\n`;  // List the phone number
       });
 
       // Wait for all the promises to complete
