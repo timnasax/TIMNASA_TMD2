@@ -1,5 +1,5 @@
 
-const { timoth } = require("../framework/zokou");
+const { zokou } = require("../framework/zokou");
 const axios = require('axios');
 const conf = require(__dirname + '/../set');
 const moment = require("moment-timezone");
@@ -44,9 +44,9 @@ function formatDuration(sec) {
 }
 
 // ── Main ping command ───────────────────────────────────────────
-timoth(
+zokou(
   {
-    nomCom: "pin",
+    nomCom: "ping",
     desc: "Check bot response time",
     Categorie: "General",
     reaction: "🏓",
