@@ -233,16 +233,53 @@ setTimeout(() => {
         });
 
         zk.ev.on("connection.update", async (con) => {
-            const { connection } = con;
-            if (connection === 'open') {
-                console.log("✅ TIMNASA-MD ONLINE");
+            const { lastDisconnect, connection } = con;
+            if (connection === "connecting") {
+                console.log("ℹ️ Timnasa md is connecting...");
+            }
+            else if (connection === 'open') {
+                console.log("✅ 𝚻𝚰𝚳𝚴𝚫𝐒𝚫 𝚻𝚳𝐃2- Connected! ☺️");
+                console.log("𝚻𝚰𝚳𝚴𝚫𝐒𝚫 𝚻𝚳𝐃2 is Online 🕸\n\n");
                 fs.readdirSync(__dirname + "/commandes").forEach((fichier) => {
-                    if (path.extname(fichier).toLowerCase() == ".js") require(__dirname + "/commandes/" + fichier);
+                    if (path.extname(fichier).toLowerCase() == (".js")) {
+                        try { require(__dirname + "/commandes/" + fichier); }
+                        catch (e) { console.log(e); }
+                    }
                 });
-            } else if (connection === "close") main();
+                await activateCrons();
+                if((conf.DP).toLowerCase() === 'yes') {     
+                let cmsg =`      𝚻𝚰𝚳𝚴𝚫𝐒𝚫 𝚻𝚳𝐃2
+╭─────────────━┈⊷ 
+│🌏 Timnasa md CONNECTED
+│💫 ᴘʀᴇғɪx: *[ ${prefixe} ]*
+│⭕ ᴍᴏᴅᴇ: *${(conf.MODE).toLowerCase() === "yes" ? "public" : "private"}*
+╰─────────────━┈⊷⁠⁠⁠⁠`;
+                await zk.sendMessage(zk.user.id, { text: cmsg });
+                }
+            }
+            else if (connection == "close") {
+                let raisonDeconnexion = new boom_1.Boom(lastDisconnect?.error)?.output.statusCode;
+                if (raisonDeconnexion === baileys_1.DisconnectReason.restartRequired) { main(); }   
+                else { const {exec}=require("child_process") ; exec("pm2 restart all"); }
+                main();
+            }
         });
 
         zk.ev.on("creds.update", saveCreds);
+
+        zk.downloadAndSaveMediaMessage = async (message, filename = '', attachExtension = true) => {
+            let quoted = message.msg ? message.msg : message;
+            let mime = (message.msg || message).mimetype || '';
+            let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0];
+            const stream = await (0, baileys_1.downloadContentFromMessage)(quoted, messageType);
+            let buffer = Buffer.from([]);
+            for await (const chunk of stream) { buffer = Buffer.concat([buffer, chunk]); }
+            let type = await FileType.fromBuffer(buffer);
+            let trueFileName = './' + filename + '.' + type.ext;
+            await fs.writeFileSync(trueFileName, buffer);
+            return trueFileName;
+        };
+
         return zk;
     }
     main();
