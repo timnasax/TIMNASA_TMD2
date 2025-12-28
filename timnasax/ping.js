@@ -1,5 +1,5 @@
 
-const { timoth } = require("../framework/timoth");
+const { timoth } = require("../framework/zokou");
 const axios = require('axios');
 const conf = require(__dirname + '/../set');
 const moment = require("moment-timezone");
