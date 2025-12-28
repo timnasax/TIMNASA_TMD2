@@ -177,7 +177,7 @@ setTimeout(() => {
             }
 
             // BOT/NJABULO BUTTON & RANDOM IMAGE
-            if (texte && (texte.toLowerCase() === 'njabulo' || texte.toLowerCase() === 'bot')) {
+            if (texte && (texte.toLowerCase() === 'framework || texte.toLowerCase() === 'bot')) {
                 const randomImg = njabulox[Math.floor(Math.random() * njabulox.length)];
                 const buttons = [
                     { name: "cta_url", buttonParamsJson: JSON.stringify({ display_text: "View on channel", url: "https://whatsapp.com/channel/0029VbAckOZ7tkj92um4KN3u" }) },
